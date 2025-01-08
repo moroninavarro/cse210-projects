@@ -11,40 +11,39 @@ class Program
         string valueFromUser = Console.ReadLine();
 
         int x = int.Parse(valueFromUser);
-        int a = 90;
-        int b = 80;
-        int c = 70;
-        int d = 60;
-        string letter;
+       
+        string letter = "";
         
 
-        if (x >= a)
+        if (x >= 90)
         {
-            Console.WriteLine("Your grade is an A "{letter});
+           letter = "A";
         }
 
-        else if (x >= b)
+        else if (x >= 80)
         {
-            Console.WriteLine("Your grade is an B ");
+            letter = "B";
         }
 
-        else if (x >= c)
+        else if (x >= 70)
         {
-            Console.WriteLine("Your grade is an C ");
+            letter = "C";
         }
 
-        else if (x >= d)
+        else if (x >= 60)
         {
-            Console.WriteLine("Your grade is an D ");
+           letter = "D";
 
         }
        
         else
         {
-            Console.WriteLine("Your grade is an F ");
+            letter = "F";
         }
 
-        if (x >= d || x >= c ||x >= b ||x >= a)
+        Console.WriteLine($"Your grade is: {letter}");
+
+        if (x >= 70)
         {
             Console.WriteLine("Congratulations, you passed the course.");
         }
