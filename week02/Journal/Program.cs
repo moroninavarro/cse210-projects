@@ -34,7 +34,7 @@ class Program
                 Console.Write("What is the filename? ");
                 file = Console.ReadLine();
                 myJournal.LoadFromFile(file);
-                myJournal.Display_entries();
+                myJournal.Display();
                 break;
 
 
