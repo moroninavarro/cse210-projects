@@ -10,12 +10,14 @@ public class Comment {
         _name = name;
         _comment= comment;
     }
-    public void Display()
+
+
+  
+
+    public string DisplayCommentAndName()
     {
-        Console.WriteLine($"Author: {_name}"); 
-        Console.WriteLine($"Comment: {_comment}");
+       
+     return $"Name: {_name} Comment: {_comment}";
         
     }
-
-
 }
