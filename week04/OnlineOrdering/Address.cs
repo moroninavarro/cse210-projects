@@ -33,6 +33,6 @@ public Address(string street, string city, string state, string country){
 
 public string DisplayText(){
     
-    return $"Street: {_state} / City: {_city} / State: {_state} / Country: {_country}";
+    return $"Street: {_street} / City: {_city} / State: {_state} / Country: {_country}";
 }
 }

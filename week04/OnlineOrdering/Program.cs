@@ -9,9 +9,9 @@ class Program
         Product product2 = new Product(5.99m, 3, 4321, "Apple");
         Product product3 = new Product(7.99m, 3, 5678, "Hamburger");
 
-        Address address1 = new Address("street", "City", "State","country");
-        Address address2 = new Address("street", "City", "State","country");
-        Address address3 = new Address("street", "City", "State","country");
+        Address address1 = new Address("Broadway", "New York", "NY","USA");
+        Address address2 = new Address("Hollywood Boulevard", "The Angels", "California","USA");
+        Address address3 = new Address("Avenida Revolucion", "Tijuana", "Baja California","Mexico");
 
         Customer customer1 = new Customer("John", address1);
         Customer customer2 = new Customer("Maria", address2);
