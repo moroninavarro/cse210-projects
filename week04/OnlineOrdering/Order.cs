@@ -1,0 +1,45 @@
+using System;
+using System.Security.Cryptography.X509Certificates;
+
+public class Order{
+    
+    private Address _address;
+    
+     public string Country;
+
+     public Order(Address address){
+        _address = address;
+    }
+    
+    //Contains a list of products and a customer.
+    public List<Product> Products;
+    private Customer customer;
+    
+    public Order(Customer customer){
+        this.customer = customer;
+        Products = new List<Product>();
+    }
+   
+    public void AddProduct(Product product)
+    {
+        Products.Add(product);
+    }
+    
+
+
+//The total price is calculated
+// as the sum of the total cost of each product plus a one-time shipping cost.
+    public decimal CalculateTotalPrice(){
+        
+       decimal TotalCost = 0;
+       foreach(var product in Products)
+       {
+        TotalCost += product.CalculateTotalCost();
+       }
+       decimal shippingCost = customer.Direction() ? 5:35;
+       return TotalCost + shippingCost;
+    }
+
+
+
+}
