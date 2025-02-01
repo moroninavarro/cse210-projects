@@ -1,5 +1,5 @@
 using System;
-// I used AI to be able to do this assignment.
+// I used Meta AI to be able to do this assignment.
 class Program
 {
     static void Main(string[] args)
