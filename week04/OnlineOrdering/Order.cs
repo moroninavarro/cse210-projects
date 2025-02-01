@@ -17,6 +17,7 @@ public class Order{
     
     public Order(Customer customer){
         this.customer = customer;
+       // _address = customer.Address;
         Products = new List<Product>();
     }
    
@@ -39,6 +40,30 @@ public class Order{
        decimal shippingCost = customer.Direction() ? 5:35;
        return TotalCost + shippingCost;
     }
+
+    public string GetShippingLabel()
+    {
+        string shippingLabel = "\n";
+        shippingLabel += $"Name of the Customer: {customer.DisplayName()} \n";
+        shippingLabel += $"Address: {customer.Display()} \n";
+        decimal shippingCost = customer.Direction() ? 5:35 ;
+        shippingLabel += $"Shipping Cost: {shippingCost}";
+        return shippingLabel;
+    }
+
+    public string GetPackingLabel()
+    {
+        string label = "";
+        foreach (var product in Products)
+        {
+        label += $"Name of the product: {product.GetName()}\n";
+        label += $"Product ID: {product.GetProductId()}\n\n";
+        }
+        return label;
+
+    }
+
+
 
 
 

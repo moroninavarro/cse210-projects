@@ -29,10 +29,10 @@ public Address(string street, string city, string state, string country){
 //The address should have a method to return a string
 // all of its fields together in one string (with newline
 // characters where appropriate)
-//PROBALBY OSMEHTING LIKE DISPLAY VOID() YOU KNOW
 
-public void Display(){
+
+public string DisplayText(){
     
-    Console.WriteLine($"Street: {_state} / City: {_city} / State: {_state} / Country: {_country}");
+    return $"Street: {_state} / City: {_city} / State: {_state} / Country: {_country}";
 }
 }
