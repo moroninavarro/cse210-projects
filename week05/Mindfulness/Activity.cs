@@ -19,7 +19,7 @@ public class Activity{
         Console.WriteLine();
         Console.WriteLine($"{_description}");
         Console.WriteLine();
-        Console.WriteLine($"How long, in seconds would you like for your session?");
+        Console.Write($"How long, in seconds would you like for your session? ");
         _seconds = Convert.ToInt32(Console.ReadLine());
     }
 

@@ -12,8 +12,7 @@ class Program
         Console.WriteLine("3. Start listing activity");
         Console.WriteLine("4. Quit");
         Console.Write("Select a choice from the menu: ");
-        //Console.ReadLine();
-         int option = Convert.ToInt32(Console.ReadLine());
+        int option = Convert.ToInt32(Console.ReadLine());
 
          
              if (option == 1)
@@ -26,6 +25,14 @@ class Program
                 
                 
             }
+              else if(option == 2)
+            {
+                Console.Clear();
+                ReflectingActivity reflectingActivity = new ReflectingActivity();
+                Console.Clear();
+                reflectingActivity.Run();
+                Console.Clear();
+            }
 
             else if(option == 3)
             {
@@ -34,19 +41,20 @@ class Program
                 Console.Clear();
                 listingActivity.Run();
                 Console.Clear();
-                //string name = listingActivity.GetRandomPrompt();
-                //Console.WriteLine(name);
             }
+
+
             else if(option == 4)
             {
             return;
             }
+
+            else {
+                Console.WriteLine("Invalid option, please try again.");
+                Thread.Sleep(1200);
+                Console.Clear();
+            }
     }
 
-            
-
-       //BreathingActivity breathingActivity = new BreathingActivity();
-       // Console.WriteLine(breathingActivity.DisplayStartingMessage);
-        //Console.WriteLine();
     }
 }
