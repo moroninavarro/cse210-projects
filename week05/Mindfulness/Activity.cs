@@ -20,15 +20,15 @@ public class Activity{
         Console.WriteLine($"{_description}");
         Console.WriteLine();
         Console.WriteLine($"How long, in seconds would you like for your session?");
-        int time = Convert.ToInt32(Console.ReadLine());
+        _seconds = Convert.ToInt32(Console.ReadLine());
     }
 
      public void DisplayEndingMessage(){
         Console.WriteLine($"Well done!!");
         ShowSpinner(6);
         Console.WriteLine();
-        Console.WriteLine($"You have completed another {_duration} seconds of the Listing Activity.");
-        Console.WriteLine();
+        Console.WriteLine($"You have completed another {_seconds} seconds of the Listing Activity.");
+        
     }
 
    
@@ -47,7 +47,7 @@ public class Activity{
         foreach (string s in animationStrings)
         {
             Console.Write(s);
-            Thread.Sleep(1000);
+            Thread.Sleep(900);
             Console.Write("\b \b");
         }
      

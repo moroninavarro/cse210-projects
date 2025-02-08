@@ -19,20 +19,24 @@ class Program
              if (option == 1)
             {
                 Console.Clear();
-                Activity activity = new Activity("BreathingActivity","This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.",5);
-                activity.DisplayStartingMessage();
-                Console.Clear();
-                Console.WriteLine("Get ready...");
-                activity.ShowSpinner(6);
-                Console.WriteLine();
                 BreathingActivity breathingActivity = new BreathingActivity();
-                Console.WriteLine();
-                activity.DisplayEndingMessage();
-                activity.ShowSpinner(6);
                 Console.Clear();
+                breathingActivity.Run();
+                Console.Clear();
+                
                 
             }
 
+            else if(option == 3)
+            {
+                Console.Clear();
+                ListingActivity listingActivity = new ListingActivity(6);
+                Console.Clear();
+                listingActivity.Run();
+                Console.Clear();
+                //string name = listingActivity.GetRandomPrompt();
+                //Console.WriteLine(name);
+            }
             else if(option == 4)
             {
             return;
