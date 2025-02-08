@@ -19,7 +19,7 @@ public class BreathingActivity : Activity{
         int breaths = time / 4;
         for (int i = 0; i < breaths; i++)
         {
-            Console.Write($"Breathe in...");
+            Console.Write($"Breathe in... ");
             
             for (int j = 3; j>=1; j--)
             {
@@ -29,7 +29,7 @@ public class BreathingActivity : Activity{
             }
             
             Console.WriteLine();
-            Console.Write($"Now Breathe out...");
+            Console.Write($"Now Breathe out... ");
             for (int j = 6; j>=1; j--)
             {
                 Console.Write(j);
@@ -40,7 +40,7 @@ public class BreathingActivity : Activity{
         Console.WriteLine();
         }
         DisplayEndingMessage();
-        Thread.Sleep(4000);
+        
             
 
     }

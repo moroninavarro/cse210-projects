@@ -1,5 +1,6 @@
+// I used AI Meta to do this assignment.
+//Exceeding Requirements: I added a (Invalid option) for the menu, this is very helpful in case the user put an invalid option, he will be able to return again into the menu.
 using System;
-
 class Program
 {
     static void Main(string[] args)
@@ -51,7 +52,22 @@ class Program
 
             else {
                 Console.WriteLine("Invalid option, please try again.");
-                Thread.Sleep(1200);
+                List<string> animationStrings = new List<string>();
+                animationStrings.Add("|");
+                animationStrings.Add("/");
+                animationStrings.Add("-");
+                animationStrings.Add("\\");
+                animationStrings.Add("|");
+                animationStrings.Add("/");
+                animationStrings.Add("-");
+                animationStrings.Add("\\");
+
+                foreach (string s in animationStrings)
+                {
+                    Console.Write(s);
+                    Thread.Sleep(900);
+                    Console.Write("\b \b");
+                }
                 Console.Clear();
             }
     }

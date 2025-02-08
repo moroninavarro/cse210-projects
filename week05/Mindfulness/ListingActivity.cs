@@ -42,7 +42,7 @@ public class ListingActivity : Activity{
         GetListFromUser();
         Console.WriteLine();
         DisplayEndingMessage();
-        Thread.Sleep(4000);
+        
     }
 
     public void GetRandomPrompt(){

@@ -2,7 +2,7 @@ using System;
 
 public class ReflectingActivity: Activity {
     
-    
+    private static Random random = new Random();
     private List<string> _prompts = new List<string>()
         {
             "Think of a time when you stood up for someone else.",
@@ -37,28 +37,66 @@ public class ReflectingActivity: Activity {
     {
         Console.WriteLine("Get ready...");
         ShowSpinner(5);
+        DisplayPrompt();
         Console.WriteLine();
+        Console.WriteLine("When you have something in mind, press enter to continue.");
 
 
+        string option = Convert.ToString(Console.ReadLine());
+
+        if (option == ""){
+            Console.WriteLine("Now ponder on each of the following questions as they related to this experience.");
+            Console.Write($"You may begin in: ");
+            for (int j = 5; j>=1; j--)
+            {
+                Console.Write(j);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+            }
+        }
+        DateTime startTime = DateTime.Now;
+        while  ((DateTime.Now - startTime). TotalSeconds <_seconds){
+
+        Console.Clear();
+        DisplayQuestions();
+        Console.WriteLine();
+        if ((DateTime.Now - startTime). TotalSeconds >=_seconds){
+
+                DisplayEndingMessage();
+                
+                break;
+            }
+        }
+        
     }
 
      public string GetRandomPrompt(){
-        
+         
+        string promptRandom = _prompts[random.Next(_prompts.Count)];
+        return $"--- {promptRandom} ---";
+    
+    
         
     }
 
       public string GetRandomQuestion(){
-        
+         string questionRandom = _questions[random.Next(_questions.Count)];
+        return $"> {questionRandom} ";
         
     }
 
      public void DisplayPrompt(){
+        Console.WriteLine();
+        Console.WriteLine("Consider the following prompt: "); 
+        Console.WriteLine();
+        Console.WriteLine(GetRandomPrompt()); 
         
         
     }
 
      public void DisplayQuestions(){
-        
+        Console.Write(GetRandomQuestion()); 
+        ShowSpinner(5);
         
     }
 

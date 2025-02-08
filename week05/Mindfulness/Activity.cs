@@ -28,7 +28,7 @@ public class Activity{
         ShowSpinner(6);
         Console.WriteLine();
         Console.WriteLine($"You have completed another {_seconds} seconds of the Listing Activity.");
-        
+        ShowSpinner(6);
     }
 
    
