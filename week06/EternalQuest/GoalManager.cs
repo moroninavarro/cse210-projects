@@ -2,6 +2,7 @@ using System;
 using System.IO;
 public class GoalManager
 {
+public List<Goal> goals = new List<Goal>();
 
  public void SaveGoals(string file)
 
@@ -16,17 +17,16 @@ public class GoalManager
     }
 
 
-     public List<Goal> LoadGoals(string file)
+     public void LoadGoals(string file)
 
     {
-    
-        List<Goal> loadedGoals = new List<Goal>();
+        goals.Clear();
         if (File.Exists(file))
         {
              using (StreamReader reader = new StreamReader(file))
         {
        string line;
-            while ((line = reader.ReadLine()) !== null)
+            while ((line = reader.ReadLine()) != null)
             {
                 string[] parts = line.Split(':');
                 string typeGoal = parts [0];
@@ -34,26 +34,26 @@ public class GoalManager
                 {
                     SimpleGoal simpleGoal = new SimpleGoal();
 
-                    simpleGoal.LoadFromStringRepresentation(line);
-                    loadedGoals.Add(simpleGoal);
+                    simpleGoal.GetStringRepresentation();
+                    goals.Add(simpleGoal);
 
                 }
 
                 else if (typeGoal == "EternalGoal")
                 {EternalGoal eternalGoal = new EternalGoal();
                 
-                eternalGoal.LoadFromStringRepresentation(line);
-                    loadedGoals.Add(eternalGoal);}
+                eternalGoal.GetStringRepresentation();
+                    goals.Add(eternalGoal);}
 
                     else if (typeGoal == "ChecklistGoal")
-                {ChecklistGoal checklistGoal= new ChecklistGoal();
+                {ChecklistGoal checklistGoal= new ChecklistGoal(10,10);
                 
-                checklistGoal.LoadFromStringRepresentation(line);
-                    loadedGoals.Add(checklistGoal);
+                checklistGoal.GetStringRepresentation();
+                    goals.Add(checklistGoal);
                 }
             }
         }
     }
-    return loadedGoals;
+    
     }
 }

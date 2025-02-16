@@ -1,8 +1,12 @@
+//I used AI Meta to do this assignment.
+// I Added one animation to the menu, in case the user select an invalid option.
 using System;
 
 class Program
 {
     static List<Goal> goal = new List<Goal>();
+
+    private static GoalManager manager = new GoalManager();
     static void Main(string[] args)
     {
         
@@ -80,21 +84,25 @@ class Program
 
             else if(option == 3)
             {
-                Console.Write("What is the filename for the goal file? ");
-                string file = Console.ReadLine();
-                GoalManager manager = new GoalManager();
-                manager.SaveGoals(file);
+                //Console.Write("What is the filename for the goal file? ");
+                //Console.ReadLine();
+                manager.SaveGoals("goals.txt");
+                Console.WriteLine("Saved.");
+                
               
             }
 
 
             else if(option == 4)
             {
-                Console.Write("What is the filename for the goal file? ");
-                string file = Console.ReadLine();
-                GoalManager manager = new GoalManager();
-                List<Goal> goal = manager.LoadGoals(file);
-                
+                //Console.Write("What is the filename for the goal file? ");
+                //Console.ReadLine();
+                manager.LoadGoals("goals.txt");
+                foreach (var goal in manager.goals)
+                {
+                    Console.WriteLine(goal.GetDetailsString());
+                }
+
             }
 
 
