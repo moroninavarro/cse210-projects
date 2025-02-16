@@ -4,26 +4,43 @@ using System;
 public class EternalGoal: Goal{
 
 
-    public EternalGoal():base ("","", 10)
+    public EternalGoal():base ("","", 0)
     {
-        return
+       
+    }
+
+    public override void CompleteEvent()
+    {   
+        
+        Console.WriteLine($"Congratulations! You have earned {_points} points! ");
+        Console.WriteLine();
+        Console.WriteLine($"You now have {_points}");
     }
 
 
 
-
-    public override void RecordEvent()
+      public override void RecordEvent()
     {
-        throw new NotImplementedException();
+        Console.WriteLine();
+        Console.Write("What is the name of your goal? ");
+        _shortName = Console.ReadLine();
+
+        Console.Write("What is a short description of it? ");
+        _description = Console.ReadLine();
+
+        Console.Write("What is the amount of points associated with this goal? ");
+        _points = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine();
     }
+
+
        public override bool IsComplete()
     {
-        throw new NotImplementedException();
+        return false;
     }
-
-
+   
     public override string GetStringRepresentation()
     {
-        throw new NotImplementedException();
+       return $"EternalGoal:{_shortName},{_description},{_points}";
     }
 }

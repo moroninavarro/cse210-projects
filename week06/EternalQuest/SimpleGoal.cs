@@ -4,34 +4,53 @@ using System.Security.Cryptography.X509Certificates;
 public class SimpleGoal: Goal{
 
 
-    private bool _isComplete;
+    public bool _isComplete;
 
 
-    public SimpleGoal():base ("", "", 10)
+    public SimpleGoal():base ("", "",0)
     {
-    
+      
+    }
+
+
+    public override void CompleteEvent()
+    {
+        
+        _isComplete = true;
+        Console.WriteLine($"Congratulations! You have earned {_points} points! ");
+        Console.WriteLine();
+        Console.WriteLine($"You now have {_points}");
     }
 
     public override void RecordEvent()
     {
-        GetDetailsString();
+        Console.WriteLine();
+        Console.Write("What is the name of your goal? ");
+        _shortName = Console.ReadLine();
+
+        Console.Write("What is a short description of it? ");
+        _description = Console.ReadLine();
+
+        Console.Write("What is the amount of points associated with this goal? ");
+        _points = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine();
     }
 
     public override bool IsComplete()
     {
-        throw new NotImplementedException();
+       return _isComplete;
     }
+
+
+    
 
 
     public override string GetStringRepresentation()
     {
-        throw new NotImplementedException();
+       return $"SimpleGoal:{_shortName},{_description},{_points},{_isComplete}";
+       
     }
 
-    //Example
-    //    public override double GetArea()
-    //  {
-    //    return _side * _side;
-    //}
+  
 
 }

@@ -1,12 +1,13 @@
 using System;
 
 public abstract class Goal{
-    private string _shortName;
-    private string _description;
-    private int _points;
+    protected string _shortName;
+    protected string _description;
+    protected int _points;
 
 
-    public Goal(string name, string description, int points){
+    public Goal(string name, string description, int points)
+    {
 
         _shortName = name;
         _description = description;
@@ -14,7 +15,8 @@ public abstract class Goal{
         
     }
 
-
+    public abstract void CompleteEvent();
+    
     public abstract void RecordEvent();
        // This method should do whatever is necessary for each specific kind of goal, such as marking a simple goal complete and adding 
        // to the number of times a checklist goal has been completed. It should return the point value associated with recording the event
@@ -30,6 +32,11 @@ public abstract class Goal{
 
 
      public string GetDetailsString(){
+        
+        return $"{_shortName} ({_description})";
+
+        
+     }
         //This method should return the details of a goal that could be shown
         // in a list. It should include the checkbox, the short name, and
         //description. Then in the case of the ChecklistGoal class, it should be
@@ -37,15 +44,13 @@ public abstract class Goal{
         // accomplished so
         //  far.
 
-        return $"{_shortName} ({_description}) \n You have {_points} points.";
-        
 
-
-    }
 
      public abstract string GetStringRepresentation();
        // This method should provide all of the details of a goal in a
        //  way that is easy to save
        // to a file, and then load later.
+
+
     
 }
