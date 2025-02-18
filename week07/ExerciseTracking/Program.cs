@@ -1,3 +1,4 @@
+//I used AI Meta to do this assignment. And I included the screenshot.
 using System;
 
 class Program
